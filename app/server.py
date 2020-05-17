@@ -12,13 +12,13 @@ import base64, sys, numpy as np
 
 path = Path(__file__).parent
 model_file_url = 'https://drive.google.com/uc?export=download&id=107jdtjtJNVHLW1I2vuA8QWuDBLrfxp3o'
-model_file_name = 'model'
+model_file_name = 'save_model'
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
 
-MODEL_PATH = path/'models'/f'{model_file_name}.h5'
+MODEL_PATH = path/'models'/f'{model_file_name}.pb'
 IMG_FILE_SRC = '/tmp/saved_image.png'
 
 async def download_file(url, dest):
