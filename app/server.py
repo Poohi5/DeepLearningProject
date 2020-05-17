@@ -47,8 +47,12 @@ async def upload(request):
     data = await request.form()
     img_bytes = await (data["img"].read())
     bytes = base64.b64decode(img_bytes)
-    with open(IMG_FILE_SRC, 'wb') as f: f.write(bytes)
+    img = open_image(BytesIO(img_bytes))
+    #with open(IMG_FILE_SRC, 'wb') as f: f.write(bytes)
     return model_predict(IMG_FILE_SRC, model)
+    #img_data = await request.form()
+    #img_bytes = await (img_data['file'].read())
+    #img = open_image(BytesIO(img_bytes))
 
 def model_predict(img_path, model):
     result = []; img = image.load_img(img_path, target_size=(224, 224))
