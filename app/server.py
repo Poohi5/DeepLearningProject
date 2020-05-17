@@ -11,7 +11,7 @@ import uvicorn, aiohttp, asyncio
 import base64, sys, numpy as np
 
 path = Path(__file__).parent
-model_file_url = 'https://drive.google.com/uc?export=download&id=107jdtjtJNVHLW1I2vuA8QWuDBLrfxp3o'
+model_file_url = 'https://drive.google.com/uc?export=download&id=11R5TFH4nC1QMUBIv02NIvruiT9gUoV4n'
 model_file_name = 'model'
 
 app = Starlette()
