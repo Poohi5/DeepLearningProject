@@ -16,7 +16,7 @@ model_file_name = 'model'
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
-app.mount('/static', StaticFiles(directory='/Users/PrajaktaPatil/Desktop/Deep Learning/deploy/keras-vision-app-master/app/static'))
+app.mount('/static', StaticFiles(directory='/app/static'))
 
 MODEL_PATH = path/'models'/f'{model_file_name}.h5'
 IMG_FILE_SRC = '/tmp/saved_image.png'
